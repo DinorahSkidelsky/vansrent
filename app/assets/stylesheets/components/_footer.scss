@@ -1,0 +1,43 @@
+.footer-style {
+  padding-top: 30px;
+  background-color: #2C3E50;
+}
+footer {
+  color: white;
+  z-index: 100;
+}
+footer h3 {
+  margin-bottom: 0px;
+  font-weight: 800;
+}
+footer .footer-above {
+  padding-top: 0px;
+  background-color: #2C3E50;
+}
+footer .footer-col {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+footer .footer-below {
+  padding: 25px 0;
+  background-color: #233140;
+}
+
+ .footer-down{
+   position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.list-inline{
+  display: block;
+  padding-left:  0;
+ }
+.list-inline li{
+  display: inline;
+}
