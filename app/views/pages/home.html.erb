@@ -1,2 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>HOME PAGE</h1>
+<p>Usuario logueado:
+  <% if current_user  %>
+    <%= current_user.email %></p>
+  <% end %>
+
+<h3>VANS:</h3>
+
+<div class="container">
+  <ul>
+  <% @vans.each do |van| %>
+    <li><%= link_to van.description, van_path(van) %></li>
+  <% end %>
+  </ul>
+</div>
+
+<%= cl_image_tag("development/ftn0x8oy7ehs44g0cmpws2q3xr72.jpg",
+      width: 400, height: 300, crop: :fill) %>
+
+<%= link_to "Log in", new_user_session_path %>
+<%= link_to "Log out", destroy_user_session_path, method: :delete %>
