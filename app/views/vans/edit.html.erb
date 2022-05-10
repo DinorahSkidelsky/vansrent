@@ -1,0 +1,14 @@
+<h1>Edit your Van:</h1>
+
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <%= simple_form_for(@van) do |f| %>
+      <%= f.input :description %>
+      <%= f.input :place %>
+      <%= f.input :model %>
+      <%= f.input :brand %>
+      <%= f.input :price %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
