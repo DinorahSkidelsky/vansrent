@@ -1,0 +1,12 @@
+<h1>Vans List</h1>
+
+<div class="container">
+  <ul>
+  <% @vans.each do |van| %>
+    <li><%= link_to van.description, van_path(van) %></li>
+  <% end %>
+  </ul>
+</div>
+
+
+<%= link_to "Add a new van", new_van_path %>

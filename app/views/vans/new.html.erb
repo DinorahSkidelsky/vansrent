@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Create a new Van</h1>
+    <div class="d-flex justify-content-center">
+      <%= simple_form_for(@van) do |f| %>
+        <%= f.input :description %>
+        <%= f.input :place %>
+        <%= f.input :model %>
+        <%= f.input :brand %>
+        <%= f.input :price %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+
+<br>
+<p class="d-flex justify-content-center"><%= link_to "Back to Home Page", root_path, class: "btn btn-primary"%></p>
+</div>
