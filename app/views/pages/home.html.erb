@@ -1,21 +1,66 @@
-<h1>HOME PAGE</h1>
-<p>Usuario logueado:
-  <% if current_user  %>
-    <%= current_user.email %></p>
-  <% end %>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+<body>
 
-<h3>VANS:</h3>
 
-<div class="container">
-  <ul>
-  <% @vans.each do |van| %>
-    <li><%= link_to van.description, van_path(van) %></li>
-  <% end %>
-  </ul>
+<!-- Header -->
+<div class="banner imagen1" style="background-color: #f44336;">
+  <div class="container">
+    <h1>Vans Rent</h1>
+    <p>Somos los mejores en nuestro rubro</p>
+   <div class="d-flex justify-content-center">
+   <a class="butn" href="<%= link_to 'Rental Vans', vans_path %>"></a>
+  </div>
+  </div>
 </div>
 
-<%= cl_image_tag("development/ftn0x8oy7ehs44g0cmpws2q3xr72.jpg",
-      width: 400, height: 300, crop: :fill) %>
 
+<!-- First Grid -->
+      <p>Usuario logueado:
+      <% if current_user  %>
+      <%= current_user.email %></p>
+      <% end %>
+
+
+
+    </ul>
+  </div>
 <%= link_to "Log in", new_user_session_path %>
 <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+
+<div class="container">
+ <h2 class="text-center">Nuestras Mejores Vans</h2>
+    <div class="cards">
+    <% @vans.each do |van| %>
+      <div class="card">
+          <img src="https://fotos.perfil.com/2021/09/01/volkner-mobil-performance-s-1224410.jpg" alt="">
+          <h4><%= link_to van.description, van_path(van) %></h4>
+          <p>some</p>
+      </div>
+    <% end %>
+    </div>
+</div>
+
+<!-- Second Grid -->
+<div class="container fondo-abajo">
+      <h1>Lorem Ipsum</h1>
+      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+
+      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</body>
+</html>
