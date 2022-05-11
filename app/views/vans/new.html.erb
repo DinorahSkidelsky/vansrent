@@ -7,10 +7,11 @@
         <%= f.input :model %>
         <%= f.input :brand %>
         <%= f.input :price %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit %>
       <% end %>
     </div>
 
 <br>
-<p class="d-flex justify-content-center"><%= link_to "Back to Home Page", root_path, class: "btn btn-primary"%></p>
+<p class="d-flex justify-content-center"><%= link_to "Back to Home", root_path, class: "btn btn-primary"%></p>
 </div>

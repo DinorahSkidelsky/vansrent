@@ -7,7 +7,7 @@ class VansController < ApplicationController
 
   def show
     @van = Van.find(params[:id])
-    @reservation = Reservation.find(params[:id])
+    # @reservation = Reservation.find(params[:id])
   end
 
   def new
@@ -16,6 +16,7 @@ class VansController < ApplicationController
 
   def create
     @van = Van.new(van_params)
+    @van.user = current_user
     if @van.save
       redirect_to van_path(@van)
     else

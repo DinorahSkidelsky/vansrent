@@ -1,12 +1,19 @@
 <div class="container">
   <h1>New Reservation:</h1>
+
   <br>
-  <%= current_user.id %>
+  <h5>User:
+  <%= current_user.email %>
+  </h5>
+
   <br>
   <br>
   <%= simple_form_for [ @van, @reservation ] do |f| %>
     <%= f.input :start_time %>
     <%= f.input :end_time %>
-    <%= f.submit "Submit reservation", class: "btn btn-primary" %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
+  <br>
+
+  <%= link_to 'Back', van_path(@van), class: "btn btn-primary" %>
 </div>
