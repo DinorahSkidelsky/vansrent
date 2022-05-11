@@ -1,4 +1,8 @@
 class ReservationsController < ApplicationController
+  def index
+    @reservations = Reservation.all
+  end
+
   def show
     @van = Van.find(params[:van_id])
     @reservation.van = @van
@@ -15,7 +19,7 @@ class ReservationsController < ApplicationController
     @reservation.van = @van
     @reservation.user_id = current_user.id
     if @reservation.save
-      redirect_to van_path(@van)
+      redirect_to reservations_path
     else
       render :new
     end

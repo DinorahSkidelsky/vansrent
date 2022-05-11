@@ -1,27 +1,25 @@
-<h2>Van</h2>
+<div class="container">
+  <h2>Van</h2>
 
-<h3><%= @van.description %></h3>
-<p><%= @van.model %></p>
-<p><%= @van.brand %></p>
-<p><%= @van.price %></p>
-<p><% @van.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-</p>
+  <p>
+    <% @van.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  </p>
+  <h3><%= @van.description %></h3>
+  <p><%= @van.model %></p>
+  <p><%= @van.brand %></p>
+  <p><%= @van.price %></p>
 
-<% @reservation.reviews.each do |review| %>
-  <%= review.comment %>
-  <%= review.rating %>
-<% end %>
-
-<br>
-
-<% @van.reservations.each do |reservation| %>
-  <%= reservation.start_time %>
-  <%= reservation.end_time %>
-<% end %>
-
-<br>
-<%= link_to 'Back to Home', root_path %>
-<br>
-<%= link_to 'Rent', new_van_reservation_path(@van) %>
+  <br>
+  <%= link_to 'Rent', new_van_reservation_path(@van), class: "btn btn-primary" %>
+  <%# solo para el usuario que alquila %>
+  <br>
+  <br>
+  <%= link_to "Edit | Delete Van", edit_van_path(@van), class: "btn btn-primary" %>
+  <%# solo para el usuario dueño %>
+  <br>
+  <br>
+  <%= link_to 'Back', vans_path, class: "btn btn-primary" %>
+  <br>
+</div>
