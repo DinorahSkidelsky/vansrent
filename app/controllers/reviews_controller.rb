@@ -1,18 +1,14 @@
 class ReviewsController < ApplicationController
-  def show
-    @van = Van.find(params[:van_id])
-    @review.van = @van
-  end
-
   def new
-    @van = Van.find(params[:van_id])
+    @reservation = Reservation.find(params[:reservation_id])
     @review = Review.new
   end
 
   def create
     @review = Review.new(review_params)
-    @van = Van.find(params[:van_id])
-    @review.van = @van
+    @reservation = Reservation.find(params[:reservation_id])
+    @review.reservation = @reservation
+    @van = @reservation.van
     if @review.save
       redirect_to van_path(@van)
     else
