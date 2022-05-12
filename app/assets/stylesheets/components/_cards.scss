@@ -24,14 +24,13 @@ body {
 .cards .card {
   width: 340px;
   height: 400px;
-  background: rgb(235, 57, 57);
+  background: gray;
   box-shadow: 4px 6px 14px #2F2F42;
   border-radius: 3px;
   color: #F9F9F9;
-  padding: 16px;
   transition: all .3s;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 150px;
  }
 
  .card:hover {
@@ -40,16 +39,24 @@ body {
 
 .card img {
   height: 200px;
+  width: 338px;
 }
 
 .container h2 {
 margin: 60px;
 
 }
+.card ul{
+  padding: 0;
+}
+.card li{
+  list-style: none;
+  margin-top: 5px;
+}
+
 
 @media(max-width: 992px){
   .cards .card{
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
