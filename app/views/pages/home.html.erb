@@ -20,49 +20,37 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <!-- Header -->
 <div class="banner imagen1" style="background-color: #f44336;">
   <div class="container">
-    <h1>Vans Rent</h1>
-    <p>Somos los mejores en nuestro rubro</p>
+    <h1>Reserve now</h1>
+
    <div class="d-flex justify-content-center">
-   <a class="butn" href="<%= link_to 'Rental Vans', vans_path %>"></a>
+    <%= link_to 'Rental Vans', vans_path, class: "butn" %>
   </div>
   </div>
 </div>
 
 
 <!-- First Grid -->
-      <p>Usuario logueado:
-      <% if current_user  %>
-      <%= current_user.email %></p>
-      <% end %>
-
-
-
-    </ul>
-  </div>
-<%= link_to "Log in", new_user_session_path %>
-<%= link_to "Log out", destroy_user_session_path, method: :delete %>
 
 <div class="container">
- <h2 class="text-center">Nuestras Mejores Vans</h2>
-    <div class="cards">
+ <h2 class="text-center"></h2>
+  <div class="cards">
+
     <% @vans.each do |van| %>
       <div class="card">
-          <img src="https://fotos.perfil.com/2021/09/01/volkner-mobil-performance-s-1224410.jpg" alt="">
-          <h4><%= link_to van.description, van_path(van) %></h4>
-          <p>some</p>
-      </div>
-    <% end %>
+      <% van.photos.each do |photo| %>
+        <%= link_to (cl_image_tag photo.key, crop: :fill), van_path(van) %>
+      <% end %>
+      <ul>
+        <li><%= van.description %></li>
+        <li><%= van.place %></li>
+        <li><%= van.model %></li>
+        <li><%= van.brand %></li>
+        <li><%= van.price %></li>
+      </ul>
     </div>
+  <% end %>
+  </div>
 </div>
 
-<!-- Second Grid -->
-<div class="container fondo-abajo">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
-
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
 </body>
 </html>
