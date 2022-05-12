@@ -11,6 +11,14 @@
   <p><%= @van.brand %></p>
   <p><%= @van.price %></p>
 
+  <div>
+  <h1>Review:</h1>
+    <ul><% @van.reviews.each do |review|  %>
+      <li><%= review.comment %>
+      <%= '*' * review.rating %></li>
+    <% end %></ul>
+  </div>
+
   <br>
   <%= link_to 'Rent', new_van_reservation_path(@van), class: "btn btn-primary" %>
   <%# solo para el usuario que alquila %>

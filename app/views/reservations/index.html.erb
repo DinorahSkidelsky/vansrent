@@ -3,27 +3,32 @@
   <table class="table">
   <thead>
     <tr>
-      <th scope="col">Foto</th>
-      <th scope="col">Descripción</th>
-      <th scope="col">Arrendador</th>
-      <th scope="col">Fecha de inicio</th>
-      <th scope="col">Fecha de término</th>
-      <th scope="col">Precio</th>
-      <th scope="col">Acciones</th>
+      <th scope="col">Photo</th>
+      <th scope="col">Description</th>
+      <th scope="col">User</th>
+      <th scope="col">Start Day</th>
+      <th scope="col">End Day</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
     <% @reservations.each do |reservation| %>
     <tr>
-      <th scope="row"></th>
-      <td></td>
-      <td></td>
-      <td><%= reservation.start_time %></td>
-      <td><%= reservation.end_time %></td>
-      <td><%= reservation.price %></td>
-      <td></td>
+      <th scope="row"><% reservation.van.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
+        <% end %></th>
+      <td><%= reservation.van.description %></td>
+      <td><%= "#{reservation.van.user.first_name} #{reservation.van.user.last_name}" %></td>
+      <td><%= reservation.start_time.strftime('%d/%m/%Y') %></td>
+      <td><%= reservation.end_time.strftime('%d/%m/%Y') %></td>
+      <td><%= reservation.van.price * ((reservation.end_time - reservation.start_time) / 86400).to_i %></td>
+      <td><%= link_to "Edit | Delete", edit_reservation_path(reservation) %></td>
+      <td><%= link_to "Review", new_reservation_review_path(reservation) %></td>
     </tr>
     <% end %>
   </tbody>
-</table>
+  </table>
+<%= link_to 'Back', vans_path, class: "btn btn-primary" %>
 </div>
