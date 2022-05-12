@@ -7,7 +7,6 @@ class VansController < ApplicationController
 
   def show
     @van = Van.find(params[:id])
-    # @reservation = Reservation.find(params[:id])
   end
 
   def new

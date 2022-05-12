@@ -36,7 +36,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
       <% end %>
 
 
-
     </ul>
   </div>
 <%= link_to "Log in", new_user_session_path %>
@@ -47,10 +46,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <div class="cards">
     <% @vans.each do |van| %>
       <div class="card">
-          <img src="https://fotos.perfil.com/2021/09/01/volkner-mobil-performance-s-1224410.jpg" alt="">
-          <h4><%= link_to van.description, van_path(van) %></h4>
-          <p>some</p>
-      </div>
+      <% van.photos.each do |photo| %>
+        <%= link_to (cl_image_tag photo.key, height: 100, width: 300, crop: :fill), van_path(van) %>
+      <% end %>
+      <%= van.description %>
+      <%= van.place %>
+      <%= van.model %>
+      <%= van.brand %>
+      <%= van.price %>
+    </div>
     <% end %>
     </div>
 </div>
