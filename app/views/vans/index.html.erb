@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="d-flex justify-content-center my-4">
+    <h1><strong>Vans List:</strong></h1>
+  </div>
   <div class="cards cardabajo">
     <% @vans.each do |van| %>
       <div class="card">
@@ -15,7 +18,12 @@
       </div>
     <% end %>
   </div>
-  <%= link_to "Reservations", reservations_path, class: "indexbtn" %>
-  <%= link_to "Add a new van", new_van_path, class: "btn btn-primary" %>
-  <%= link_to "Back to Home", root_path, class: "btn btn-primary" %>
+  <div>
+      <div class="d-flex justify-content-end mb-4">
+          <%= link_to "Reservations", reservations_path, class: "btn btn-warning
+          " %>
+            <%= link_to "Add a new van", new_van_path, class: "btn btn-warning mx-3" %>
+          <%= link_to "Back to Home", root_path, class: "btn btn-dark" %>
+      </div>
+  </div>
 </div>

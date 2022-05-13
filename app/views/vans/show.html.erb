@@ -5,7 +5,7 @@
 </div>
 
 <div class="container">
-  <div class="cards">
+  <div class="cards d-flex justify-content-center">
     <div class="card-product">
       <% @van.photos.each do |photo| %>
         <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
@@ -21,24 +21,25 @@
   </div>
 </div>
 
-  <div>
-  <br>
-  <h3>Review:</h3>
-    <ul><% @van.reviews.each do |review|  %>
-      <li><%= review.comment %>
-      <%= '*' * review.rating %></li>
-    <% end %></ul>
+  <div class="container" style="padding-bottom: 0;">
+    <h3 style="margin-left: 0;"><strong>Reviews:</strong></h3>
+       <ul style="padding-left: 0;"><% @van.reviews.each do |review|  %>
+        <div class="row">
+          <div class="col-6">
+            <div>
+              <label for="exampleFormControlTextarea1" class="form-label"><%= "⭐" * review.rating %></label>
+                <p class="text-box"><%= review.comment %></p>
+            </div>
+          </div>
+          <div class="col-6">
+          </div>
+      </div>
+  <% end %></ul>
   </div>
 
-  <br>
 
-  <%# solo para el usuario que alquila %>
-  <br>
-  <br>
 
-  <br>
-  <br>
-  <%= link_to 'Back', vans_path, class: "btn btn-dark" %>
-  <br>
-  <br>
+  <div class="d-flex justify-content-end">
+    <%= link_to 'Back', vans_path, class: "btn btn-dark" %>
+  </div>
 </div>

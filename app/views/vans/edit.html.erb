@@ -1,7 +1,8 @@
 <div class="container">
-  <h1>Edit your Van:</h1>
-
-    <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center mb-4">
+    <h1><strong>Edit your Van:</strong></h1>
+  </div>
+<div class="d-flex justify-content-center">
       <%= simple_form_for(@van) do |f| %>
         <%= f.input :description %>
         <%= f.input :place %>
@@ -15,13 +16,11 @@
         <%= f.submit %>
       <% end %>
     </div>
-
-    <%= link_to "Delete",
-                van_path(@van),
-                method: :delete,
-                data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
-
-    <br>
-    <br>
-    <%= link_to "Back", van_path(@van), class: "btn btn-primary"%>
+    <div class="d-flex justify-content-end">
+      <%= link_to "Delete",
+                  van_path(@van),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "btn btn-warning mx-3" %>
+      <%= link_to "Back", van_path(@van), class: "btn btn-dark"%>
+    </div>
 </div>

@@ -1,12 +1,11 @@
-<div class="container">
-  <h1 class="d-inline-flex p-2 bd-highlight">Write a Review:</h1>
-
-  <%= simple_form_for [ @reservation, @review ] do |f| %>
-    <%= f.input :comment %>
-    <%= f.input :rating %>
-    <%= f.submit "Go", class: "btn btn-primary" %>
-  <% end %>
-
-  <br>
-  <%= link_to 'Back', reservations_path, class: "btn btn-primary" %>
+<div class="container special-margin">
+  <h1 class="d-flex justify-content-center"><strong>Write a Review:</strong></h1>
+    <%= simple_form_for [ @reservation, @review ] do |f| %>
+      <%= f.input :comment %>
+      <%= f.input :rating %>
+      <div class="d-flex justify-content-end">
+      <%= f.submit "Go", class: "btn btn-warning mb-3" %>
+      <%= link_to 'Back', reservations_path, class: "btn btn-dark mx-2 mb-3" %>
+      </div>
+    <% end %>
 </div>

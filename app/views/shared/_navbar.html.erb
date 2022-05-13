@@ -1,8 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
     <div class= "enterprise">
-     <%= link_to image_tag("https://i.pinimg.com/564x/57/d4/3f/57d43f5e96ea4e4684c9dc521742a4fb--vw-camper-vw-bus.jpg", class: "avatar dropdown-toggle"), root_path %>
+      <%= image_tag("https://i.pinimg.com/564x/57/d4/3f/57d43f5e96ea4e4684c9dc521742a4fb--vw-camper-vw-bus.jpg", class: "logo") %>
       <h3>Vans Rent</h3>
       </div>
     <% end %>
@@ -21,8 +21,8 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://w7.pngwing.com/pngs/527/663/png-transparent-logo-person-user-person-icon-rectangle-photography-computer-wallpaper.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Log in", new_user_session_path, class: "dropdown-item"  %>
               <%= link_to "Reservations", reservations_path, class: "dropdown-item" %>
+              <%= link_to "Log in", new_user_session_path, class: "dropdown-item"  %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
             </div>
           </li>
