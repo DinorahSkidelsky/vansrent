@@ -1,26 +1,21 @@
 <div class="container">
-  <h1>Vans List</h1>
-
-  <div class="container">
-    <ul>
+  <div class="cards cardabajo">
     <% @vans.each do |van| %>
+      <div class="card">
       <% van.photos.each do |photo| %>
-        <%= link_to (cl_image_tag photo.key, height: 300, width: 400, crop: :fill), van_path(van) %>
+        <%= link_to (cl_image_tag photo.key, crop: :fill), van_path(van) %>
       <% end %>
-      <li><%= van.description %></li>
-      <li><%= van.place %></li>
-      <li><%= van.model %></li>
-      <li><%= van.brand %></li>
-      <li><%= van.price %></li>
+      <ul>
+        <li><h4><%= van.description %></h4></li>
+        <li><%= van.place %></li>
+        <li><%= van.model %></li>
+        <li><%= van.brand %></li>
+        <li>$<%= van.price %> / Night</li>
+      </ul>
+      </div>
     <% end %>
-    </ul>
   </div>
-
+  <%= link_to "Reservations", reservations_path, class: "indexbtn" %>
   <%= link_to "Add a new van", new_van_path, class: "btn btn-primary" %>
-  <br>
-  <br>
   <%= link_to "Back to Home", root_path, class: "btn btn-primary" %>
-  <br>
-  <br>
-  <%= link_to "Reservations", reservations_path, class: "btn btn-primary" %>
 </div>
