@@ -1,10 +1,10 @@
 <div class="container">
-  <h1>Add a new Review:</h1>
+  <h1 class="d-inline-flex p-2 bd-highlight">Write a Review:</h1>
 
   <%= simple_form_for [ @reservation, @review ] do |f| %>
     <%= f.input :comment %>
     <%= f.input :rating %>
-    <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <%= f.submit "Go", class: "btn btn-primary" %>
   <% end %>
 
   <br>

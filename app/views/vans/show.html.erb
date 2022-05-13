@@ -1,18 +1,29 @@
-<div class="container">
-  <h2>Van</h2>
+<div class="banner-show" style="background-image: url(https://i.pinimg.com/originals/cc/14/b9/cc14b9abd4d085b67a6cc5e84e271929.jpg);">
+  <div class="container">
+   <h2><strong>Camper Life start here</strong></h2>
+  </div>
+</div>
 
-  <p>
-    <% @van.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-  </p>
-  <h3><%= @van.description %></h3>
-  <p><%= @van.model %></p>
-  <p><%= @van.brand %></p>
-  <p><%= @van.price %></p>
+<div class="container">
+  <div class="cards">
+    <div class="card-product">
+      <% @van.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    <div class="card-product-infos">
+    <h3><%= @van.description %></h3>
+      <p><%= @van.model %></p>
+      <p><%= @van.brand %></p>
+      <p>$<%= @van.price %>/ Night</p>
+      <%= link_to 'Rent Now', new_van_reservation_path(@van), class: "btn btn-warning moved-button" %>
+      <%= link_to "Edit | Delete", edit_van_path(@van), class: "btn btn-dark moved-button" %>
+    </div>
+  </div>
+</div>
 
   <div>
-  <h1>Review:</h1>
+  <br>
+  <h3>Review:</h3>
     <ul><% @van.reviews.each do |review|  %>
       <li><%= review.comment %>
       <%= '*' * review.rating %></li>
@@ -20,14 +31,14 @@
   </div>
 
   <br>
-  <%= link_to 'Rent', new_van_reservation_path(@van), class: "btn btn-primary" %>
+
   <%# solo para el usuario que alquila %>
   <br>
   <br>
-  <%= link_to "Edit | Delete Van", edit_van_path(@van), class: "btn btn-primary" %>
-  <%# solo para el usuario dueño %>
+
   <br>
   <br>
-  <%= link_to 'Back', vans_path, class: "btn btn-primary" %>
+  <%= link_to 'Back', vans_path, class: "btn btn-dark" %>
+  <br>
   <br>
 </div>

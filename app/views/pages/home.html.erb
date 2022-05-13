@@ -1,57 +1,45 @@
-
-
 <html lang="en">
-<head>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-anchor,.fa-coffee {font-size:200px}
-</style>
-</head>
-<body>
-
-
+  <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+    .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+    .fa-anchor,.fa-coffee {font-size:200px}
+    </style>
+  </head>
+  <body>
 <!-- Header -->
-<div class="banner imagen1" style="background-color: #f44336;">
-  <div class="container">
-    <h1>Reserve now</h1>
-
-   <div class="d-flex justify-content-center">
-
-    <%= link_to 'Rental Vans', vans_path, class: "butn" %>
-
-  </div>
-  </div>
-</div>
-
-
-<!-- First Grid -->
-<div class="container">
- <h2 class="text-center"></h2>
-  <div class="cards">
-
-    <% @vans.each do |van| %>
-      <div class="card">
-      <% van.photos.each do |photo| %>
-        <%= link_to (cl_image_tag photo.key, crop: :fill), van_path(van) %>
-      <% end %>
-      <ul>
-        <li><%= van.description %></li>
-        <li><%= van.place %></li>
-        <li><%= van.model %></li>
-        <li><%= van.brand %></li>
-        <li><%= van.price %></li>
-      </ul>
+    <div class="banner imagen1" style="background-color: #f44336;">
+      <div class="container">
+        <h1>Reserve now</h1>
+          <div class="d-flex justify-content-center">
+          <%= link_to 'Rent a Van', vans_path, class: "butn" %>
+        </div>
+      </div>
     </div>
-  <% end %>
-  </div>
-</div>
-
-</body>
+<!-- First Grid -->
+    <div class="container">
+      <div class="cards">
+        <% @vans.each do |van| %>
+          <div class="card">
+            <% van.photos.each do |photo| %>
+              <%= link_to (cl_image_tag photo.key, crop: :fill), van_path(van) %>
+            <% end %>
+            <ul>
+              <li><h4><%= van.description %></h4></li>
+              <li><%= van.place %></li>
+              <li><%= van.model %></li>
+              <li><%= van.brand %></li>
+              <li>$<%= van.price %> / Night</li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </body>
 </html>
