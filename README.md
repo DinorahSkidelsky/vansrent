@@ -1,1 +1,3 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+[<h1 class="border bottom">VansRent 🚐 </h1>](ttps://vansrent.herokuapp.com/)
+
+<p>Designed, implemented and shipped to production a clone of AirBnB</p>
