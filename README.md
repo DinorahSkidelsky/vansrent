@@ -1,6 +1,6 @@
 [<h1 class="border bottom">VansRent 🚐 </h1>](https://vansrent.herokuapp.com/)
 
-Designed, implemented and shipped to production a clone of AirBnB clone 💥
+Designed, implemented and shipped to production a clone of AirBnB 💥
 
 ✔ [Database Schema](https://docs.google.com/spreadsheets/d/16SEf1nzSzAgNG_4DRHfX_ObdJ76RKk4_SVoQtMXBFSw/edit?usp=sharing) 🔑
 
