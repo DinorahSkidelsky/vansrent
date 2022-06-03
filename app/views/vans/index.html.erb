@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="d-flex justify-content-center my-4">
-    <h1><strong>Vans List:</strong></h1>
+  <div class="d-flex justify-content-center my-5">
+    <h1><strong>Choose your favorite Van and rent it now!</details></strong></h1>
   </div>
   <div class="cards cardabajo">
     <% @vans.each do |van| %>
@@ -9,10 +9,9 @@
         <%= link_to (cl_image_tag photo.key, crop: :fill), van_path(van) %>
       <% end %>
       <ul>
-        <li><h4><%= van.description %></h4></li>
-        <li><%= van.place %></li>
-        <li><%= van.model %></li>
-        <li><%= van.brand %></li>
+        <li><h4><strong><%= van.description %></strong></h4></li>
+        <li><h5><%= van.place %></h5></li>
+        <li><%= "#{van.model}, #{van.brand}" %></li>
         <li>$<%= van.price %> / Night</li>
       </ul>
       </div>

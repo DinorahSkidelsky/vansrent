@@ -24,6 +24,7 @@
     </div>
 <!-- First Grid -->
     <div class="container">
+      <h2 class="d-flex justify-content-center">The best options for you to book your Van</h2>
       <div class="cards">
         <% @vans.each do |van| %>
           <div class="card">
@@ -31,10 +32,9 @@
               <%= link_to (cl_image_tag photo.key, crop: :fill), van_path(van) %>
             <% end %>
             <ul>
-              <li><h4><%= van.description %></h4></li>
-              <li><%= van.place %></li>
-              <li><%= van.model %></li>
-              <li><%= van.brand %></li>
+              <li><h4><strong><%= van.description %></strong></h4></li>
+              <li><h5><%= van.place %></h5></li>
+              <li><%= "#{van.model}, #{van.brand}" %></li>
               <li>$<%= van.price %> / Night</li>
             </ul>
           </div>

@@ -1,6 +1,6 @@
 <div class="container special-margin">
   <div class="col d-flex justify-content-center">
-    <h1><strong>New Reservation:</strong></h1>
+    <h1><strong>New Reservation</strong></h1>
   </div>
   <%= simple_form_for [ @van, @reservation ] do |f| %>
     <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>

@@ -11,9 +11,9 @@
         <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
     <div class="card-product-infos">
-    <h3><%= @van.description %></h3>
-      <p><%= @van.model %></p>
-      <p><%= @van.brand %></p>
+    <h3><strong><%= @van.description %></strong></h3>
+      <h4><%= @van.place %></h4>
+      <p><%= "#{@van.model}, #{@van.brand}" %></p>
       <p>$<%= @van.price %>/ Night</p>
       <%= link_to 'Rent Now', new_van_reservation_path(@van), class: "btn btn-warning moved-button" %>
       <%= link_to "Edit | Delete", edit_van_path(@van), class: "btn btn-dark moved-button" %>
