@@ -15,10 +15,14 @@
       <p><%= "#{@van.model}, #{@van.brand}" %></p>
       <p>$<%= @van.price %>/ Night</p>
       <%= link_to 'Rent Now', new_van_reservation_path(@van), class: "btn btn-warning moved-button" %>
-      <%= link_to "Edit | Delete", edit_van_path(@van), class: "btn btn-dark moved-button" %>
+      <%= link_to "Edit your Van", edit_van_path(@van), class: "btn btn-dark moved-button" %>
+      <h3 class="my-2"><%= link_to "Delete",
+                    van_path(@van),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" }, class: "btn btn-danger mx-3" %></h3>
+    </div>
     </div>
   </div>
-</div>
   <div class="container" style="padding-bottom: 0;">
     <h3 style="margin-left: 0;"><strong>Reviews:</strong></h3>
        <ul style="padding-left: 0;"><% @van.reviews.each do |review|  %>
