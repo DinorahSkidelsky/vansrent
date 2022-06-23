@@ -1,4 +1,4 @@
-[<h1 class="border bottom">VansRent 🚐 </h1>](https://vansrent.herokuapp.com/)
+[<h1 class="border bottom">📌 VansRent 🚐 </h1>](https://vansrent.herokuapp.com/)
 
 Designed, implemented and shipped to production a clone of AirBnB 💥
 
