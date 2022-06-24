@@ -26,12 +26,12 @@
       <td><%= reservation.start_time.strftime('%d/%m/%Y') %></td>
       <td><%= reservation.end_time.strftime('%d/%m/%Y') %></td>
       <td><%= reservation.van.price * ((reservation.end_time - reservation.start_time) / 86400).to_i %></td>
-      <td><%= link_to "Edit", edit_reservation_path(reservation) %></td>
+      <td><%= link_to "Edit", edit_reservation_path(reservation), class: "btn btn-secondary" %></td>
       <td><%= link_to "Delete",
               reservation_path(reservation),
               method: :delete,
-              data: { confirm: "Are you sure?" } %></td>
-      <td><%= link_to "Review", new_reservation_review_path(reservation) %></td>
+              data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></td>
+      <td><%= link_to "Review", new_reservation_review_path(reservation), class: "btn btn-success" %></td>
     </tr>
     <% end %>
   </tbody>
